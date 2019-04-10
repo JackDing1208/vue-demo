@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .bindClass{
+            background: red;
+            height: 30px ;
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    {{msg}} <br>
+    {{date|convertDate}}
+    <div v-text="text"></div>
+    <div v-html="html"></div>
+    <div :class="bind"></div>   //v-bind
+    <button @click="stopTimer">停止时间</button>   //v-on
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="./main.js"></script>
+</body>
+</html>
