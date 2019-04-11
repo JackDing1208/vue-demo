@@ -6,14 +6,20 @@ var app = new Vue({
         text: "v-text测试",
         html: "<b>v-html测试</b>",
         bind: "bindClass",
-        reverseNumber:"45,995,452,436,987,15",
+        reverseNumber:"45,995,452,436,987,15,26,84,62,36,29,74",
         firstName:"Jack",
         lastName:"Ding",
+        url:'http://www.baidu.com',
+        isActive:true,
+        isOn:false,
+        color:"red",
+        height:50,
     },
     computed:{
-        reverse:function () {
-            return this.reverseNumber.split(',').reverse().join(',')
-        },
+        sort:function () {
+            // 要返回值的函数一定记得加return!!!!!
+            return this.reverseNumber.split(',').sort(function (x,y) {return x-y}).join(',')
+            },
         fullName:function () {
             return this.firstName+" "+this.lastName
         }
@@ -22,6 +28,9 @@ var app = new Vue({
         stopTimer: function () {
             clearInterval(this.timer)
         },
+        watch:function () {
+            return this.firstName+" "+this.lastName
+        }
 
     },
     filters: {
