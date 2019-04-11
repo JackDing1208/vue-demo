@@ -5,12 +5,24 @@ var app = new Vue({
         date: new Date(),
         text: "v-text测试",
         html: "<b>v-html测试</b>",
-        bind: "bindClass"
+        bind: "bindClass",
+        reverseNumber:"45,995,452,436,987,15",
+        firstName:"Jack",
+        lastName:"Ding",
+    },
+    computed:{
+        reverse:function () {
+            return this.reverseNumber.split(',').reverse().join(',')
+        },
+        fullName:function () {
+            return this.firstName+" "+this.lastName
+        }
     },
     methods: {
         stopTimer: function () {
             clearInterval(this.timer)
-        }
+        },
+
     },
     filters: {
         convertDate: function (value) {
