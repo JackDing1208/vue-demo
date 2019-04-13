@@ -15,25 +15,49 @@
         .bindClass2{
             border:5px solid blue;
         }
+        [v-cloak]:{
+            display: none;
+        }
     </style>
 </head>
 <body>
 <div id="app">
+    1.{{}}文本插值 <br>
     {{msg}} <br>
+    2.|过滤器 <br>
     {{date|convertDate}}
+    3.v-text 方法<br>
     <div v-text="text"></div>
+    4.v-html 方法 <br>
     <div v-html="html"></div>
+    5.v-bind 方法 <br>
     <div :class="bind"></div>
+    6.v-on 方法 <br>
     <button @click="stopTimer">停止时间</button>
     <br>
+    7.computed  计算属性 <br>
     原数据：{{reverseNumber}} <br>
     排序数据：{{sort}} <br>
     {{fullName}}
     {{watch()}} <br>
-    <a :href="url">点我跳转</a>
+    8.绑定动态属性 <br>
+    <a :href="url">点我跳转</a> <br>
+    9.绑定对象 <br>
     <div :class="{bindClass1:isActive,bindClass:isOn}"></div>
-    <div :class="['bindClass1','bindClass2']"></div>
+    10.绑定数组 <br>
+    <div :class="[class1,class2]"></div>
+    11.绑定style对象 <br>
     <div :style="{'height':height+'px','background':color}"></div>
+    12.v-cloak方法 <br>
+    <div v-cloak>我加了v-cloak</div>
+    13.v-once 方法 <br>
+    <div v-once>{{once}}</div>
+    14.v-for遍历超级英雄
+    <ul>
+        <li v-for="value in hero">{{value}}</li>
+    </ul>
+    15.v-model双向绑定 <br>
+    <input type="text" v-model="msg"/>   
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
