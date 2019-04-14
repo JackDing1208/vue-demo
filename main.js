@@ -17,7 +17,25 @@ var app = new Vue({
         color: "red",
         height: 50,
         once: "我只渲染一次",
-        hero:["BatMan", "IronMan", "SpiderMan", "Thor"]
+        hero:["BatMan", "IronMan", "SpiderMan", "Thor"],
+        list:{
+            item1:{
+                id:1,
+                price:2,
+                num:3
+            },
+            item2:{
+                id:2,
+                price:5,
+                num:7
+            },
+            item3:{
+                id:3,
+                price:5,
+                num:2
+            }
+        },
+        isTrue:true,
 
 
 
@@ -39,6 +57,9 @@ var app = new Vue({
         },
         watch: function () {
             return this.firstName + " " + this.lastName
+        },
+        reverse:function () {
+            this.isTrue=!this.isTrue
         }
 
     },

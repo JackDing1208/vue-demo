@@ -52,12 +52,22 @@
     <div v-cloak>我加了v-cloak</div>
     13.v-once 方法 <br>
     <div v-once>{{once}}</div>
-    14.v-for遍历超级英雄
+    14.v-for遍历数组
     <ul>
         <li v-for="value in hero">{{value}}</li>
     </ul>
+    15.v-for遍历对象
+    <ol>
+        <li v-for="value in list">商品{{value.id}}总价是{{value.price*value.num}}</li>
+    </ol>
+    16.v-if判断显示
+    <div v-if="isTrue">haha</div>
+    <div v-else>hehe</div>
+    <button @click="reverse">点我</button>
+    <br>
     15.v-model双向绑定 <br>
-    <input type="text" v-model="msg"/>   
+    <input type="text" v-model="msg"/>
+    <p></p>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
