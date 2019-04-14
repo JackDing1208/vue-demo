@@ -7,15 +7,17 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-        .bindClass1{
+        .bindClass1 {
             background: red;
-            height: 30px ;
+            height: 30px;
             width: 50%;
         }
-        .bindClass2{
-            border:5px solid blue;
+
+        .bindClass2 {
+            border: 5px solid blue;
         }
-        [v-cloak]:{
+
+        [v-cloak] {
             display: none;
         }
     </style>
@@ -32,21 +34,21 @@
     <div v-html="html"></div>
     5.v-bind 方法 <br>
     <div :class="bind"></div>
-    6.v-on 方法 <br>
+    6.v-on 方法 绑定事件 <br>
     <button @click="stopTimer">停止时间</button>
     <br>
-    7.computed  计算属性 <br>
+    7.computed 计算属性 <br>
     原数据：{{reverseNumber}} <br>
     排序数据：{{sort}} <br>
     {{fullName}}
     {{watch()}} <br>
-    8.绑定动态属性 <br>
+    8.v-bind绑定动态属性 <br>
     <a :href="url">点我跳转</a> <br>
-    9.绑定对象 <br>
+    9.v-bind绑定对象 <br>
     <div :class="{bindClass1:isActive,bindClass:isOn}"></div>
-    10.绑定数组 <br>
+    10.v-bind绑定数组 <br>
     <div :class="[class1,class2]"></div>
-    11.绑定style对象 <br>
+    11.v-bind绑定style对象 <br>
     <div :style="{'height':height+'px','background':color}"></div>
     12.v-cloak方法 <br>
     <div v-cloak>我加了v-cloak</div>
@@ -60,14 +62,20 @@
     <ol>
         <li v-for="value in list">商品{{value.id}}总价是{{value.price*value.num}}</li>
     </ol>
-    16.v-if判断显示
+    16.v-if条件渲染，v-show的元素都会渲染出来，只改变CSS中的display
     <div v-if="isTrue">haha</div>
     <div v-else>hehe</div>
+    <div v-show="isTrue">show</div>
     <button @click="reverse">点我</button>
     <br>
-    15.v-model双向绑定 <br>
+    17.prevent 阻止默认事件  =.preventDefault <br>
+    18.stop    阻止向外冒泡  =.stopPropagation <br>
+    19.self    元素本身被操作才触发，不包括子元素 <br>
+    20.once    只执行一次 <br>
+    21.v-model双向绑定 <br>
     <input type="text" v-model="msg"/>
-    <p></p>
+    {{msg}}
+
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
